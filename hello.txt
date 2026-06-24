@@ -1,0 +1,9 @@
+✅ API container built through all 3 Docker stages and started — Database connected, API running on http://localhost:4000
+
+✅ /health returns {"status":"ok"} from inside the container — confirmed via Invoke-RestMethod from PowerShell
+
+✅ 404 handling still works correctly inside Docker — GET / and /favicon.ico both logged as clean WARN 404s, exactly as designed
+
+✅ Pino logging works inside the container — structured JSON-style logs streaming to docker compose's combined output, tagged per-service (api-1, redis-1)
+
+✅ Redis container is running

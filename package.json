@@ -1,0 +1,19 @@
+{
+  "name": "forge",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=apps/api",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "npm run build --workspace=packages/shared && npm run typecheck --workspace=apps/api",
+    "build": "npm run build --workspace=packages/shared && npm run build --workspace=apps/api"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^8.57.0"
+  }
+}
